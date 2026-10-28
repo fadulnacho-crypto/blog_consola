@@ -1,0 +1,60 @@
+[
+    {
+        "id": 1,
+        "titulo": "Introduccion a Python",
+        "contenido": "Python es un lenguaje simple y poderoso.",
+        "autor": {
+            "nombre": "Ignacio Garcia Fadul",
+            "bio": "Estudiante de Python y desarrollo web.",
+            "email": "ignacio@blog.com"
+        },
+        "tags": [
+            "python",
+            "programacion"
+        ],
+        "estado": "publicado"
+    },
+    {
+        "id": 2,
+        "titulo": "Primeros pasos con Django",
+        "contenido": "Django es un framework web para Python.",
+        "autor": {
+            "nombre": "Ignacio Garcia Fadul",
+            "bio": "Estudiante de Python y desarrollo web.",
+            "email": "ignacio@blog.com"
+        },
+        "tags": [
+            "django",
+            "web",
+            "python"
+        ],
+        "estado": "borrador"
+    },
+    {
+        "id": 3,
+        "titulo": "Consejos para aprender a programar",
+        "contenido": "Practicar todos los dias es la clave.",
+        "autor": {
+            "nombre": "Ignacio Garcia Fadul",
+            "bio": "Estudiante de Python y desarrollo web.",
+            "email": "ignacio@blog.com"
+        },
+        "tags": [
+            "consejos",
+            "programacion"
+        ],
+        "estado": "publicado"
+    },
+    {
+        "id": 4,
+        "titulo": "",
+        "contenido": "Este post no tiene titulo.",
+        "autor": {
+            "nombre": "Ignacio Garcia Fadul",
+            "bio": "Estudiante de Python y desarrollo web.",
+            "email": "ignacio@blog.com"
+        },
+        "tags": [],
+        "estado": "pendiente"
+    }
+]

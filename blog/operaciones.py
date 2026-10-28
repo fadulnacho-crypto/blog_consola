@@ -1,36 +1,25 @@
-"""Operaciones principales del blog: listar, buscar y filtrar."""
+"""Operaciones de presentacion: muestran en consola los resultados del Blog."""
 
 
-def mostrar_post(post):
-    """Muestra los datos principales de un post."""
-    autor = post.get("autor")
-    nombre = autor.get("nombre", "Sin nombre") if isinstance(autor, dict) else "Autor invalido"
-    titulo = post.get("titulo") or "(sin titulo)"
-    print(f"- [{post.get('id')}] {titulo} | Autor: {nombre} | Estado: {post.get('estado')}")
-
-
-def listar_posts(lista):
-    """Muestra todos los posts de la lista recibida."""
-    if not lista:
+def mostrar_posts(posts, titulo="Posts"):
+    """Muestra una lista de objetos Post."""
+    if not posts:
         print("No hay posts para mostrar.")
         return
-    print(f"\nPosts encontrados: {len(lista)}")
-    for post in lista:
-        mostrar_post(post)
+    print(f"\n{titulo}: {len(posts)}")
+    for post in posts:
+        print(f"- {post}")
 
 
-def buscar_por_titulo(lista, termino):
-    """Retorna los posts cuyo titulo contiene el termino (ignora mayusculas)."""
-    termino = termino.lower()
-    return [p for p in lista if termino in str(p.get("titulo", "")).lower()]
-
-
-def filtrar_por_tag(lista, tag):
-    """Retorna los posts que tienen el tag indicado (ignora mayusculas)."""
-    tag = tag.lower()
-    resultado = []
-    for post in lista:
-        tags = post.get("tags", [])
-        if isinstance(tags, list) and tag in [t.lower() for t in tags]:
-            resultado.append(post)
-    return resultado
+def mostrar_validacion(resultados):
+    """Muestra el resultado de Blog.validar_posts()."""
+    if not resultados:
+        print("No hay posts para validar.")
+        return
+    for post, errores in resultados:
+        if errores:
+            print(f"\nPost {post.id}: INVALIDO")
+            for error in errores:
+                print(f"   - {error}")
+        else:
+            print(f"\nPost {post.id}: valido")
